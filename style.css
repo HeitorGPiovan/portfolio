@@ -1,0 +1,372 @@
+:root {
+  --bg: #0f1724;
+  --bg-card: #172133;
+  --texto: #dbe3ef;
+  --texto-suave: #8b98ad;
+  --destaque: #38bdf8;
+  --borda: #24324a;
+  --raio: 12px;
+}
+
+:root[data-tema="claro"] {
+  --bg: #f6f8fb;
+  --bg-card: #ffffff;
+  --texto: #1b2433;
+  --texto-suave: #5b6678;
+  --destaque: #0277b5;
+  --borda: #dfe5ee;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--texto);
+  line-height: 1.65;
+  transition: background 0.3s, color 0.3s;
+}
+
+a {
+  color: var(--destaque);
+}
+
+.container {
+  width: min(960px, 100% - 32px);
+  margin-inline: auto;
+}
+
+/* ---------- Topo ---------- */
+
+.topo {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--borda);
+}
+
+.topo__interno {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  height: 64px;
+}
+
+.logo {
+  font-family: "Consolas", "Courier New", monospace;
+  font-weight: 700;
+  text-decoration: none;
+  margin-right: auto;
+}
+
+.menu {
+  display: flex;
+  gap: 22px;
+}
+
+.menu a {
+  color: var(--texto);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.menu a:hover {
+  color: var(--destaque);
+}
+
+.tema-botao {
+  background: none;
+  border: 1px solid var(--borda);
+  color: var(--texto);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+/* ---------- Botões ---------- */
+
+.botao {
+  display: inline-block;
+  padding: 11px 22px;
+  border-radius: 8px;
+  background: var(--destaque);
+  color: var(--bg);
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid var(--destaque);
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.botao:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.botao--contorno {
+  background: transparent;
+  color: var(--destaque);
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  min-height: calc(90vh - 64px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 0;
+}
+
+.hero__ola {
+  color: var(--destaque);
+  font-family: "Consolas", "Courier New", monospace;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  line-height: 1.1;
+  margin: 8px 0;
+}
+
+.hero__cargo {
+  font-size: clamp(1.3rem, 3.5vw, 2rem);
+  color: var(--texto-suave);
+  font-weight: 600;
+}
+
+#digitando {
+  color: var(--texto);
+}
+
+.cursor {
+  color: var(--destaque);
+  animation: piscar 1s step-end infinite;
+}
+
+@keyframes piscar {
+  50% { opacity: 0; }
+}
+
+.hero__resumo {
+  max-width: 560px;
+  margin: 20px 0 32px;
+  color: var(--texto-suave);
+}
+
+.hero__acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ---------- Seções ---------- */
+
+.secao {
+  padding: 72px 0;
+}
+
+.secao__titulo {
+  font-size: 1.7rem;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.secao__titulo span {
+  font-family: "Consolas", "Courier New", monospace;
+  color: var(--destaque);
+  font-size: 1.1rem;
+}
+
+.secao__titulo::after {
+  content: "";
+  flex: 1;
+  max-width: 240px;
+  height: 1px;
+  background: var(--borda);
+}
+
+.sobre p {
+  max-width: 680px;
+  color: var(--texto-suave);
+  margin-bottom: 14px;
+}
+
+/* ---------- Projetos ---------- */
+
+.projetos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.projeto {
+  background: var(--bg-card);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.projeto:hover {
+  transform: translateY(-4px);
+  border-color: var(--destaque);
+}
+
+.projeto h3 {
+  margin-bottom: 8px;
+}
+
+.projeto p {
+  color: var(--texto-suave);
+  font-size: 0.95rem;
+  flex: 1;
+}
+
+.projeto .tags {
+  margin: 16px 0;
+}
+
+.projeto__links {
+  display: flex;
+  gap: 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.projeto__links a {
+  text-decoration: none;
+}
+
+.projeto__links a:hover {
+  text-decoration: underline;
+}
+
+.subtitulo {
+  margin: 40px 0 12px;
+  font-size: 1.1rem;
+}
+
+.outros {
+  list-style: none;
+  color: var(--texto-suave);
+}
+
+.outros li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--borda);
+}
+
+.outros strong {
+  color: var(--texto);
+}
+
+/* ---------- Habilidades ---------- */
+
+.habilidades {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.grupo h3 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tags li {
+  font-size: 0.8rem;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--destaque) 14%, transparent);
+  color: var(--destaque);
+  font-family: "Consolas", "Courier New", monospace;
+}
+
+/* ---------- Contato ---------- */
+
+.contato {
+  text-align: center;
+}
+
+.contato .secao__titulo {
+  justify-content: center;
+}
+
+.contato .secao__titulo::after {
+  display: none;
+}
+
+.contato > p {
+  color: var(--texto-suave);
+  margin-bottom: 24px;
+}
+
+.redes {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.rodape {
+  text-align: center;
+  padding: 32px 16px;
+  color: var(--texto-suave);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--borda);
+}
+
+/* ---------- Animação ao rolar ---------- */
+
+.revelar {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s, transform 0.6s;
+}
+
+.revelar.visivel {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .revelar { opacity: 1; transform: none; transition: none; }
+  .cursor { animation: none; }
+}
+
+/* ---------- Responsivo ---------- */
+
+@media (max-width: 640px) {
+  .menu {
+    display: none;
+  }
+  .secao {
+    padding: 48px 0;
+  }
+}

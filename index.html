@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio de Heitor Garcia Piovan – estudante de Sistemas de Informação e desenvolvedor web front-end.">
+  <title>Heitor Piovan | Desenvolvedor Front-end</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    // Aplica o tema salvo antes de desenhar a página (evita "piscar")
+    try {
+      const tema = localStorage.getItem("tema");
+      if (tema) document.documentElement.dataset.tema = tema;
+    } catch {}
+  </script>
+</head>
+<body>
+  <header class="topo">
+    <div class="container topo__interno">
+      <a href="#inicio" class="logo">&lt;Heitor /&gt;</a>
+      <nav class="menu" aria-label="Principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <button class="tema-botao" id="tema-botao" type="button" aria-label="Alternar tema claro/escuro">◐</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container" id="inicio">
+      <p class="hero__ola">Olá, eu sou</p>
+      <h1>Heitor Garcia Piovan</h1>
+      <p class="hero__cargo">Desenvolvedor <span id="digitando">front-end</span><span class="cursor" aria-hidden="true">|</span></p>
+      <p class="hero__resumo">
+        Estudante de Sistemas de Informação na UTFPR e técnico em Informática pelo TECPUC.
+        Gosto de transformar ideias em interfaces simples, acessíveis e responsivas.
+      </p>
+      <div class="hero__acoes">
+        <a href="#projetos" class="botao">Ver projetos</a>
+        <a href="https://github.com/HeitorGPiovan" class="botao botao--contorno" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </section>
+
+    <section class="secao container" id="sobre">
+      <h2 class="secao__titulo"><span>01.</span> Sobre mim</h2>
+      <div class="sobre">
+        <p>
+          Sou de Curitiba – PR e curso Bacharelado em Sistemas de Informação na Universidade Tecnológica Federal do Paraná (UTFPR).
+          Antes disso, fiz o Técnico em Informática integrado ao Ensino Médio no TECPUC.
+        </p>
+        <p>
+          Atualmente sou estagiário de TI na Cron Engenharia, onde trabalho com banco de dados, consultas SQL e relatórios.
+          Meu foco agora é o desenvolvimento web front-end, e estou buscando uma oportunidade de estágio na área.
+        </p>
+        <p>
+          Também tenho experiência com C/C++, projetos com Arduino e concluí uma Iniciação Científica sobre o padrão
+          C2PA em redes sociais descentralizadas.
+        </p>
+      </div>
+    </section>
+
+    <section class="secao container" id="projetos">
+      <h2 class="secao__titulo"><span>02.</span> Projetos</h2>
+      <div class="projetos" id="lista-projetos"></div>
+
+      <h3 class="subtitulo">Outros projetos</h3>
+      <ul class="outros">
+        <li><strong>Sistema embarcado com site</strong> — Arduino integrado a aplicação web (PHP, HTML, CSS e SQL) para monitoramento de dados.</li>
+        <li><strong>Jogo 2D em C++</strong> — Jogo orientado a objetos com SFML: colisões, animações e controle de entidades.</li>
+        <li><strong>Iniciação Científica</strong> — Pesquisa e testes de implementação do C2PA em redes sociais descentralizadas.</li>
+      </ul>
+    </section>
+
+    <section class="secao container" id="habilidades">
+      <h2 class="secao__titulo"><span>03.</span> Habilidades</h2>
+      <div class="habilidades">
+        <div class="grupo">
+          <h3>Front-end</h3>
+          <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Design responsivo</li></ul>
+        </div>
+        <div class="grupo">
+          <h3>Back-end e dados</h3>
+          <ul class="tags"><li>PHP</li><li>SQL</li></ul>
+        </div>
+        <div class="grupo">
+          <h3>Outros</h3>
+          <ul class="tags"><li>C / C++</li><li>Git e GitHub</li><li>Design gráfico</li><li>Edição de imagens</li></ul>
+        </div>
+        <div class="grupo">
+          <h3>Idiomas</h3>
+          <ul class="tags"><li>Português (nativo)</li><li>Inglês (avançado)</li><li>Espanhol (básico)</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao container contato" id="contato">
+      <h2 class="secao__titulo"><span>04.</span> Contato</h2>
+      <p>Estou em busca de estágio em desenvolvimento web. Vamos conversar?</p>
+      <a href="mailto:heitorgpiovan@gmail.com" class="botao">heitorgpiovan@gmail.com</a>
+      <ul class="redes">
+        <li><a href="https://linkedin.com/in/heitorgp1002" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/HeitorGPiovan" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>Feito com HTML, CSS e JavaScript · <span id="ano"></span></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
